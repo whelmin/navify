@@ -132,11 +132,11 @@ var dev_nav = new Vue({
             filenameList.push(hashArry[1]);
         }
         /* push path */
-        if(pathArry[pathArryLength]){
-            filenameList.push(pathArry[pathArryLength]);
+        if(pathArry[pathArryLength - 1]){
+            filenameList.push(pathArry[pathArryLength - 1]);
         }else{
-            if(pathArryLength > 1){
-                filenameList.push(pathArry[pathArryLength - 1]);
+            if(pathArryLength > 2){
+                filenameList.push(pathArry[pathArryLength - 2]);
             }
         }
         /* push host */

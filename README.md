@@ -24,7 +24,7 @@ dev-nav
 |   方向    |  简写      |   对应数据文件   |         网址                      |
 |:--------:|:---------:|:--------------:|:---------------------------------|
 |   前端    |  `fe`     |   fe.json      | http://fe.congm.in               |
-| Java Web | `javaweb` |   javaweb.json | http://dev-nav.congm.in/#javaweb |
+| Java Web | `javaweb` |   javaweb.json | http://dev-nav.congm.in/javaweb  |
 
 ### 如何访问
 
@@ -35,7 +35,7 @@ dev-nav
 http://***.**/#fe
 http://***.**/fe
 http://fe.***.**/
-都是访问到的`fe`前端数据
+都是访问到的fe前端数据
 ```
 
 优先级 `hash` > `pathname` > `hostname`
@@ -43,7 +43,7 @@ http://fe.***.**/
 如:
 ```
 http://fe.***.**/javaweb/#php
-访问到的是`php`数据, 因为hash优先级更高
+访问到的是php数据, 因为hash优先级更高
 ```
 
 ---
