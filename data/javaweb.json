@@ -1,0 +1,478 @@
+{
+  "info": {
+    "full_name": "JavaWeb后端导航",
+    "zh_name": "后端",
+    "en_name": "JavaWeb Back End",
+    "author": {
+      "name": "@ xiaofeig",
+      "link": "http://coding.xiaofeig.cn"
+    },
+    "website": "http://dev-nav.congm.in/#javaweb",
+    "github": "https://github.com/mcc108/dev-nav"
+  },
+  "section": [
+    {
+      "heading": "集成开发环境",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "IntelliJ IEAD",
+              "link": {
+                "home": "https://www.jetbrains.com/idea/"
+              }
+            },
+            {
+              "name": "Eclipse",
+              "link": {
+                "home": "https://eclipse.org/users/"
+              }
+            },
+            {
+              "name": "NetBeans",
+              "link": {
+                "home": "https://netbeans.org/"
+              }
+            },
+            {
+              "name": "JDeveloper",
+              "link": {
+                "home": "http://www.oracle.com/technetwork/developer-tools/jdev/overview/index.html"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "开发框架",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Spring",
+              "link": {
+                "home": "http://spring.io/"
+              }
+            },
+            {
+              "name": "Struts2",
+              "link": {
+                "home": "http://struts.apache.org/"
+              }
+            },
+            {
+              "name": "Hibernate",
+              "link": {
+                "home": "http://hibernate.org/"
+              }
+            },
+            {
+              "name": "MyBatis",
+              "link": {
+                "home": "http://blog.mybatis.org/"
+              }
+            },
+            {
+              "name": "Wicket",
+              "link": {
+                "home": "http://wicket.apache.org/"
+              }
+            },
+            {
+              "name": "Tapestry",
+              "link": {
+                "home": "http://tapestry.apache.org/"
+              }
+            },
+            {
+              "name": "Stripes",
+              "link": {
+                "home": "http://www.stripesframework.org/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "项目管理工具",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Maven",
+              "link": {
+                "home": "http://maven.apache.org/"
+              }
+            },
+            {
+              "name": "Gradle",
+              "link": {
+                "home": "https://gradle.org/"
+              }
+            },
+            {
+              "name": "Ant",
+              "link": {
+                "home": "http://ant.apache.org/"
+              }
+            },
+            {
+              "name": "Ivy",
+              "link": {
+                "home": "http://ant.apache.org/ivy/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "应用服务器",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Tomcat",
+              "link": {
+                "home": "http://tomcat.apache.org/"
+              }
+            },
+            {
+              "name": "WildFly",
+              "link": {
+                "home": "http://wildfly.org/"
+              }
+            },
+            {
+              "name": "GlassFish",
+              "link": {
+                "home": "https://glassfish.java.net/"
+              }
+            },
+            {
+              "name": "WebLogic",
+              "link": {
+                "home": "http://www.oracle.com/technetwork/middleware/weblogic/overview/index-085209.html"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "数据库",
+      "content": [
+        {
+          "title": "关系型数据库",
+          "item": [
+            {
+              "name": "MySQL",
+              "link": {
+                "home": "https://www.mysql.com/"
+              }
+            },
+            {
+              "name": "MariaDB",
+              "link": {
+                "home": "https://mariadb.org/"
+              }
+            },
+            {
+              "name": "PostgreSQL",
+              "link": {
+                "home": "http://www.postgresql.org/"
+              }
+            }
+          ]
+        },
+        {
+          "title": "NoSQL",
+          "item": [
+            {
+              "name": "MongoDB",
+              "link": {
+                "home": "https://www.mongodb.org/"
+              }
+            },
+            {
+              "name": "Redis",
+              "link": {
+                "home": "http://redis.io/"
+              }
+            },
+            {
+              "name": "Memcached",
+              "link": {
+                "home": "http://memcached.org/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "版本控制",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Git",
+              "link": {
+                "home": "http://git-scm.com/"
+              }
+            },
+            {
+              "name": "SVN",
+              "link": {
+                "home": "https://subversion.apache.org/"
+              }
+            }
+          ]
+        },
+        {
+          "title":"代码托管",
+          "item": [
+            {
+              "name": "Coding",
+              "link": {
+                "home": "https://coding.net"
+              }
+            },
+            {
+              "name": "Github",
+              "link": {
+                "home": "https://github.com/"
+              }
+            }
+          ]
+        },
+        {
+          "title":"自建Git托管",
+          "item": [
+            {
+              "name": "Gitlab",
+              "link": {
+                "home": "https://about.gitlab.com/"
+              }
+            },
+            {
+              "name": "Gogs",
+              "link": {
+                "home": "https://gogs.io/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "持续集成",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Jenkins",
+              "link": {
+                "home": "http://jenkins-ci.org/"
+              }
+            },
+            {
+              "name": "TeamCity",
+              "link": {
+                "home": "https://www.jetbrains.com/teamcity/"
+              }
+            },
+            {
+              "name": "GitlabCI",
+              "link": {
+                "home": "https://about.gitlab.com/gitlab-ci/"
+              }
+            },
+            {
+              "name": "TravisCI",
+              "link": {
+                "home": "https://travis-ci.org/"
+              }
+            },
+            {
+              "name": "CircleCI",
+              "link": {
+                "home": "https://circleci.com/"
+              }
+            },
+            {
+              "name": "Codeship",
+              "link": {
+                "home": "https://codeship.com/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "测试框架",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "JUnit",
+              "link": {
+                "home": "http://junit.org/"
+              }
+            },
+            {
+              "name": "TestNG",
+              "link": {
+                "home": "http://testng.org/doc/index.html"
+              }
+            },
+            {
+              "name": "Mockito",
+              "link": {
+                "home": "http://mockito.org/"
+              }
+            },
+            {
+              "name": "Arquillian",
+              "link": {
+                "home": "http://arquillian.org/"
+              }
+            },
+            {
+              "name": "JTest",
+              "link": {
+                "home": "http://www.parasoft.com/product/jtest/"
+              }
+            },
+            {
+              "name": "The Grinder",
+              "link": {
+                "home": "http://grinder.sourceforge.net/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Web应用测试",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Jmeter",
+              "link": {
+                "home": "http://jmeter.apache.org/"
+              }
+            },
+            {
+              "name": "SoapUI",
+              "link": {
+                "home": "http://www.soapui.org/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "质量分析",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "SonarQube",
+              "link": {
+                "home": "http://www.sonarqube.org/"
+              }
+            },
+            {
+              "name": "FindBugs",
+              "link": {
+                "home": "http://findbugs.sourceforge.net/"
+              }
+            },
+            {
+              "name": "PMD",
+              "link": {
+                "home": "https://pmd.github.io/"
+              }
+            },
+            {
+              "name": "Checkstyle",
+              "link": {
+                "home": "http://checkstyle.sourceforge.net/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "代码覆盖工具",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "JaCoco",
+              "link": {
+                "home": "http://www.eclemma.org/jacoco/"
+              }
+            },
+            {
+              "name": "Clover",
+              "link": {
+                "home": "https://www.atlassian.com/software/clover/overview"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Bug跟踪",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "JIRA",
+              "link": {
+                "home": "https://www.atlassian.com/software/jira"
+              }
+            },
+            {
+              "name": "Trac",
+              "link": {
+                "home": "http://trac.edgewall.org/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "文档生成工具",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Javadoc",
+              "link": {
+                "home": "http://www.oracle.com/technetwork/articles/java/index-jsp-135444.html"
+              }
+            },
+            {
+              "name": "Document! X",
+              "link": {
+                "home": "http://www.innovasys.com/product/dx/overview"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
