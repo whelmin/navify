@@ -1,0 +1,812 @@
+{
+  "info": {
+    "full_name": "Web前端导航",
+    "zh_name": "前端",
+    "en_name": "Front End",
+    "author": {
+      "name": "@ Cong Min",
+      "link": "https://congm.in"
+    },
+    "website": "http://dev-nav.congm.in/#fe",
+    "github": "https://github.com/mcc108/dev-nav"
+  },
+  "section": [
+    {
+      "heading": "文档",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "MDN",
+              "link": {
+                "home": "https://developer.mozilla.org/zh-CN"
+              }
+            }
+          ]
+        },
+        {
+          "title": "入门",
+          "item": [
+            {
+              "name": "W3school",
+              "link": {
+                "home": "http://www.w3school.com.cn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "CSS库",
+      "content": [
+        {
+          "title": "CSS Resets",
+          "item": [
+            {
+              "name": "Normalize.css",
+              "link": {
+                "home": "http://necolas.github.io/normalize.css",
+                "github": "https://github.com/necolas/normalize.css"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "UI框架",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Bootstrap",
+              "link": {
+                "home": "http://www.bootcss.com",
+                "github": "https://github.com/twbs/bootstrap"
+              }
+            },
+            {
+              "name": "Foundation",
+              "link": {
+                "home": "http://foundation.zurb.com",
+                "github": "https://github.com/zurb/foundation-sites"
+              }
+            },
+            {
+              "name": "Amaze UI",
+              "link": {
+                "home": "http://amazeui.org",
+                "github": "https://github.com/amazeui/amazeui"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "CSS处理器",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Sass",
+              "link": {
+                "home": "http://sass-lang.com",
+                "github": "https://github.com/sass/sass"
+              }
+            },
+            {
+              "name": "Less",
+              "link": {
+                "home": "http://lesscss.org",
+                "github": "https://github.com/less/less.js"
+              }
+            },
+            {
+              "name": "Stylus",
+              "link": {
+                "home": "http://stylus-lang.com",
+                "github": "https://github.com/stylus/stylus"
+              }
+            },
+            {
+              "name": "PostCSS",
+              "link": {
+                "home": "http://postcss.org",
+                "github": "https://github.com/postcss/postcss"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Sass库",
+          "item": [
+            {
+              "name": "Compass",
+              "link": {
+                "home": "http://compass-style.org",
+                "github": "https://github.com/Compass/compass"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "JS类库",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "jQuery",
+              "link": {
+                "home": "http://jquery.com",
+                "github": "https://github.com/jquery/jquery"
+              }
+            },
+            {
+              "name": "Zepto",
+              "link": {
+                "home": "http://zeptojs.com",
+                "github": "https://github.com/madrobby/zepto"
+              }
+            },
+            {
+              "name": "You Might Not Need jQuery",
+              "link": {
+                "home": "http://youmightnotneedjquery.com",
+                "github": "https://github.com/HubSpot/YouMightNotNeedjQuery"
+              }
+            }
+          ]
+        },
+        {
+          "title": "jQuery插件",
+          "item": [
+            {
+              "name": "jQuery插件库",
+              "link": {
+                "home": "http://plugins.jquery.com"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "模板引擎",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Handlebars.js",
+              "link": {
+                "home": "http://handlebarsjs.com",
+                "github": "https://github.com/wycats/handlebars.js"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "MV*框架",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "AngularJS",
+              "link": {
+                "home": "https://angularjs.org",
+                "github": "https://github.com/angular/angular.js"
+              }
+            },
+            {
+              "name": "React",
+              "link": {
+                "home": "https://facebook.github.io/react/",
+                "github": "https://github.com/facebook/react"
+              }
+            },
+            {
+              "name": "Backbone.js",
+              "link": {
+                "home": "http://backbonejs.org",
+                "github": "https://github.com/jashkenas/backbone"
+              }
+            },
+            {
+              "name": "Vue.js",
+              "link": {
+                "home": "http://vuejs.org.cn",
+                "github": "https://github.com/vuejs/vue"
+              }
+            },
+            {
+              "name": "Ember.js",
+              "link": {
+                "home": "http://emberjs.com",
+                "github": "https://github.com/emberjs/ember.js"
+              }
+            },
+            {
+              "name": "Avalon.js",
+              "link": {
+                "home": "http://avalonjs.github.io",
+                "github": "https://github.com/RubyLouvre/avalon"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "模块加载",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Require.js",
+              "link": {
+                "home": "http://requirejs.org",
+                "github": "https://github.com/requirejs/requirejs"
+              }
+            },
+            {
+              "name": "Common.js",
+              "link": {
+                "home": "http://www.commonjs.org"
+              }
+            },
+            {
+              "name": "Sea.js",
+              "link": {
+                "home": "http://seajs.org",
+                "github": "https://github.com/seajs/seajs"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "构建工具",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Gulp",
+              "link": {
+                "home": "http://gulpjs.com",
+                "github": "https://github.com/gulpjs/gulp"
+              }
+            },
+            {
+              "name": "Grunt",
+              "link": {
+                "home": "http://gruntjs.com",
+                "github": "https://github.com/gruntjs/grunt"
+              }
+            },
+            {
+              "name": "Bower",
+              "link": {
+                "home": "https://bower.io",
+                "github": "https://github.com/bower/bower"
+              }
+            },
+            {
+              "name": "Webpack",
+              "link": {
+                "home": "http://webpack.github.io",
+                "github": "https://github.com/webpack/webpack"
+              }
+            },
+            {
+              "name": "FIS",
+              "link": {
+                "home": "http://fis.baidu.com",
+                "github": "https://github.com/fex-team/fis3"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Node.js",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Node.js",
+              "link": {
+                "home": "https://nodejs.org",
+                "github": "https://github.com/nodejs/node"
+              }
+            }
+          ]
+        },
+        {
+          "title": "包管理工具",
+          "item": [
+            {
+              "name": "npm",
+              "link": {
+                "home": "https://www.npmjs.com",
+                "github": "https://github.com/npm/npm"
+              }
+            },
+            {
+              "name": "cnpm",
+              "link": {
+                "home": "http://npm.taobao.org",
+                "github": "https://github.com/cnpm/cnpm"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Node.js框架",
+          "item": [
+            {
+              "name": "Express",
+              "link": {
+                "home": "http://www.expressjs.com.cn",
+                "github": "https://github.com/expressjs/express"
+              }
+            },
+            {
+              "name": "koa",
+              "link": {
+                "home": "http://koajs.com",
+                "github": "https://github.com/koajs/koa"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "跨平台开发",
+      "content": [
+        {
+          "title": "桌面应用",
+          "item": [
+            {
+              "name": "NW.js",
+              "link": {
+                "home": "http://nwjs.io",
+                "github": "https://github.com/nwjs/nw.js"
+              }
+            }
+          ]
+        },
+        {
+          "title": "移动应用",
+          "item": [
+            {
+              "name": "React Native",
+              "link": {
+                "home": "http://facebook.github.io/react-native",
+                "github": "https://github.com/facebook/react-native"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "数据可视化",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "ECharts",
+              "link": {
+                "home": "http://echarts.baidu.com",
+                "github": "https://github.com/ecomfe/echarts"
+              }
+            },
+            {
+              "name": "D3.js",
+              "link": {
+                "home": "https://d3js.org",
+                "github": "https://github.com/d3/d3"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "图标&字体",
+      "content": [
+        {
+          "title": "图标库",
+          "item": [
+            {
+              "name": "EasyIcon",
+              "link": {
+                "home": "http://www.easyicon.net"
+              }
+            },
+            {
+              "name": "Iconpng",
+              "link": {
+                "home": "http://www.iconpng.com"
+              }
+            },
+            {
+              "name": "Iconfont",
+              "link": {
+                "home": "http://www.iconfont.cn"
+              }
+            }
+          ]
+        },
+        {
+          "title": "图标字体",
+          "item": [
+            {
+              "name": "Glyphsearch",
+              "link": {
+                "home": "http://glyphsearch.com"
+              }
+            },
+            {
+              "name": "Font Awesome",
+              "link": {
+                "home": "http://fontawesome.io",
+                "github": "https://github.com/FortAwesome/Font-Awesome"
+              }
+            },
+            {
+              "name": "Iconfont",
+              "link": {
+                "home": "http://www.iconfont.cn"
+              }
+            }
+          ]
+        },
+        {
+          "title": "字体",
+          "item": [
+            {
+              "name": "Google Fonts",
+              "link": {
+                "home": "https://www.google.com/fonts"
+              }
+            },
+            {
+              "name": "Chinaz Font",
+              "link": {
+                "home": "http://font.chinaz.com"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "浏览器",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Chrome",
+              "link": {
+                "home": "http://www.google.cn/chrome/browser/"
+              }
+            },
+            {
+              "name": "Firefox",
+              "link": {
+                "home": "http://www.firefox.com.cn"
+              }
+            },
+            {
+              "name": "Safari",
+              "link": {
+                "home": "https://www.apple.com/cn/safari/"
+              }
+            },
+            {
+              "name": "Opera",
+              "link": {
+                "home": "http://www.opera.com"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "兼容性",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Can I use",
+              "link": {
+                "home": "http://caniuse.com"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "代码编辑器",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Sublime Text",
+              "link": {
+                "home": "http://www.sublimetext.com"
+              }
+            },
+            {
+              "name": "WebStorm",
+              "link": {
+                "home": "https://www.jetbrains.com/webstorm/"
+              }
+            },
+            {
+              "name": "Atom",
+              "link": {
+                "home": "https://atom.io",
+                "github": "https://github.com/atom/atom"
+              }
+            },
+            {
+              "name": "Brackets",
+              "link": {
+                "home": "http://brackets.io"
+              }
+            },
+            {
+              "name": "Visual Studio Code",
+              "link": {
+                "home": "https://www.visualstudio.com/code-vs"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "版本控制",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Git",
+              "link": {
+                "home": "https://git-scm.com",
+                "github": "https://github.com/git/git"
+              }
+            },
+            {
+              "name": "SVN",
+              "link": {
+                "home": "http://subversion.apache.org"
+              }
+            },
+            {
+              "name": "CVS",
+              "link": {
+                "home": "http://www.nongnu.org/cvs/"
+              }
+            }
+          ]
+        },
+        {
+          "title": "代码托管",
+          "item": [
+            {
+              "name": "Github",
+              "link": {
+                "home": "https://github.com",
+                "github": "https://github.com"
+              }
+            },
+            {
+              "name": "Coding",
+              "link": {
+                "home": "https://coding.net"
+              }
+            },
+            {
+              "name": "Git@OSC (码云)",
+              "link": {
+                "home": "https://git.oschina.net"
+              }
+            },
+            {
+              "name": "Google Code",
+              "link": {
+                "home": "https://code.google.com"
+              }
+            },
+            {
+              "name": "SourceForge",
+              "link": {
+                "home": "https://sourceforge.net"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "在线调试环境",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "JSFiddle",
+              "link": {
+                "home": "https://jsfiddle.net"
+              }
+            },
+            {
+              "name": "Codepen",
+              "link": {
+                "home": "http://codepen.io"
+              }
+            },
+            {
+              "name": "JS Bin",
+              "link": {
+                "home": "http://jsbin.com"
+              }
+            },
+            {
+              "name": "RunJS",
+              "link": {
+                "home": "http://runjs.cn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "在线压缩",
+      "content": [
+        {
+          "title": "图片压缩",
+          "item": [
+            {
+              "name": "Tiny PNG",
+              "link": {
+                "home": "https://tinypng.com"
+              }
+            },
+            {
+              "name": "Tiny JPG",
+              "link": {
+                "home": "https://tinyjpg.com"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "技术社区",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "W3cfuns (前端网)",
+              "link": {
+                "home": "http://www.w3cfuns.com"
+              }
+            },
+            {
+              "name": "W3ctech",
+              "link": {
+                "home": "http://www.w3ctech.com"
+              }
+            },
+            {
+              "name": "W3cplus",
+              "link": {
+                "home": "http://www.w3cplus.com"
+              }
+            },
+            {
+              "name": "前端乱炖",
+              "link": {
+                "home": "http://www.html-js.com"
+              }
+            },
+            {
+              "name": "掘金",
+              "link": {
+                "home": "http://gold.xitu.io"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "问答社区",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "StackOverflow",
+              "link": {
+                "home": "http://stackoverflow.com"
+              }
+            },
+            {
+              "name": "SegmentFault",
+              "link": {
+                "home": "https://segmentfault.com"
+              }
+            },
+            {
+              "name": "知乎",
+              "link": {
+                "home": "https://www.zhihu.com/topic/19550901"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "科学上网",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "Shadowsocks (影梭)",
+              "link": {
+                "home": "https://shadowsocks.org",
+                "github": "https://github.com/shadowsocks/shadowsocks"
+              }
+            },
+            {
+              "name": "Lantern (蓝灯)",
+              "link": {
+                "home": "https://getlantern.org",
+                "github": "https://github.com/getlantern/lantern/"
+              }
+            },
+            {
+              "name": "Goagent",
+              "link": {
+                "home": "https://github.com/goagent/goagent",
+                "github": "https://github.com/goagent/goagent"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "小工具",
+      "content": [
+        {
+          "item": [
+            {
+              "name": "缓动函数速查表",
+              "link": {
+                "home": "http://easings.net/zh-cn",
+                "github": "https://github.com/ai/easings.net"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

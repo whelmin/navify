@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html id="dev-nav" v-cloak>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+    <title v-if="main.status">Dev-Nav</title>
+    <title v-else>{{data.info.full_name + ' - ' + data.info.en_name}}</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<!--[if IE]><p class="kill-ie">微软都放弃了IE，为啥你却还不放弃？</p><![endif]-->
+<template v-if="main.status">
+    <div class="corner-github">
+        <a v-if="main.github" :href="main.github" target="_blank">Github</a>
+    </div>
+    <h1 class="main-title">Dev-Nav</h1>
+</template>
+<template v-else>
+    <div class="corner-github">
+        <a v-if="data.info.github" :href="data.info.github" target="_blank">Github</a>
+    </div>
+    <div class="container" v-if="data.info">
+        <header>
+            <h2 class="name_en">{{data.info.en_name}}</h2>
+            <h1 class="name_zh" @click="downloadData">{{data.info.zh_name}}</h1>
+            <a v-if="main.github" :href="main.github" class="tag">Dev-Nav</a>
+            <label class="search" :class="{'active': search.status}">
+                <input type="text" placeholder="搜索..." autocomplete="off" @focus="searchOnFocus" @blur="searchOnBlur" @input="searching" v-model="search.content">
+            </label>
+        </header>
+        <div class="content">
+            <div class="box" v-for="one in data.section">
+                <section>
+                    <div class="section-heading">{{one.heading}}</div>
+                    <ul class="list" v-for="group in one.content">
+                        <li class="list-title" v-if="group.title">{{group.title}}</li>
+                        <li class="list-item" v-for="i in group.item">
+                            <a :href="i.link.home" target="_blank">
+                                <div class="item-logo" v-if="i.link">
+                                    <img :src="favicon + i.link.home">
+                                </div>
+                                <div class="item-name">{{i.name}}</div>
+                            </a>
+                            <ul class="item-link-list">
+                                <li class="item-link searchable">
+                                    <a class="iconfont baidu" :href="baidu + i.name" target="_blank"></a>
+                                </li>
+                                <li class="item-link searchable">
+                                    <a class="iconfont google" :href="google + i.name" target="_blank"></a>
+                                </li>
+                                <Li class="item-wall searchable"></Li>
+                                <li class="item-link" v-for="(key, val) in i.link">
+                                    <a class="iconfont" :class="key" :href="val" target="_blank"></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <p class="line"></p>
+            <p class="author"><a v-if="data.info.author.link" :href="data.info.author.link" target="_blank">{{data.info.author.name}}</a></p>
+            <p>本站旨在帮助{{data.info.zh_name}}的学习与开发</p>
+            <p>欢迎大家<a v-if="data.info.github" :href="data.info.github + '/issues'" target="_blank" class="issues">通过Github提交Issues</a>丰富完善本站</p>
+            <p>同时感谢大家对建设本站所做出的贡献</p>
+        </footer>
+    </div>
+</template>
+<script src="static/js/vue.min.js"></script>
+<script src="static/js/vue-resource.min.js"></script>
+<script src="static/js/app.js"></script>
+<script src="//congm.in/tongji/code.congm.in.js"></script>
+</body>
+</html>

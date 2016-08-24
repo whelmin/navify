@@ -1,0 +1,470 @@
+@import "compass/reset";
+@import "compass/css3";
+
+$font-family-common: Helvetica, 'Helvetica Neue', Aria, "Microsoft YaHei", sans-serif;
+$font-family-title: 'Helvetica Neue', Helvetica, Aria, "Microsoft YaHei", sans-serif;
+$color-gray: #aeaeae;
+$color-blue: #4394f7;
+
+/* font */
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9 */
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* common */
+* {
+    @include box-sizing(border-box);
+}
+:after,
+:before {
+    @include box-sizing(border-box);
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    position: relative;
+    min-height: 100%;
+    overflow-x: hidden;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: $font-family-common;
+    background-color: #f5f5f5;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    padding-bottom: 150px;
+}
+a {
+    color: #ccc;
+    text-decoration: none;
+    @include transition(all .25s ease-in-out);
+}
+.kill-ie {
+    margin: 0;
+    padding: .5em 0;
+    color: #333;
+    text-align: center;
+    background: #fff8e2;
+}
+[v-cloak] {
+    visibility: hidden;
+}
+.hidden {
+    display: none;
+}
+.main-title {
+    cursor: pointer;
+    position: absolute;
+    font-family: Monaco, Consolas, $font-family-title;
+    font-size: 88px;
+    line-height: 1.25;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    margin-top: -66px;
+    margin-left: -225px;
+    text-align: center;
+    color: #fff;
+    background-color: #ccc;
+    text-shadow: 3px 3px 5px $color-gray;
+    @include border-radius(10px);
+    @include box-shadow(1px 2px 5px #d8d8d8);
+    @include user-select(none);
+    @include transition(all .5s);
+    &:hover {
+        color: $color-blue;
+        background-color: transparent;
+        text-shadow: 3px 3px 5px #ddd;
+        @include box-shadow(none);
+    }
+}
+.corner-github {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 85px;
+    height: 85px;
+    overflow: hidden;
+    &>a {
+        position: absolute;
+        top: 25px;
+        right: -25px;
+        display: block;
+        width: 120px;
+        height: 20px;
+        line-height: 20px;
+        background-color: #ddd;
+        color: #fff;
+        text-align: center;
+        @include transform(rotate(45deg));
+    }
+}
+.container {
+    padding: 5px;
+    width: 1150px;
+    margin: 0 auto;
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+    }
+}
+.highlight {
+    color: #fff;
+    background: $color-blue;
+    @include border-radius(2px);
+}
+/* header */
+header {
+    position: relative;
+    font-family: $font-family-title;
+    padding: 30px 0 20px;
+    text-align: center;
+    @media screen and (max-width: 1200px) {
+        padding: 30px 0;
+    }
+    .name_en {
+        color: $color-gray;
+        font: {
+            size: 1.25rem;
+            weight: 500;
+        }
+        line-height: 1;
+    }
+    .name_zh {
+        color: $color-blue;
+        font: {
+            size: 3rem;
+            weight: 500;
+        }
+        line-height: 1.2;
+    }
+    .tag {
+        font-family: Monaco, Consolas, $font-family-title;
+        float: right;
+        position: absolute;
+        bottom: -5px;
+        right: 20px;
+        font-size: .7rem;
+        line-height: 1.6;
+        display: inline-block;
+        color: #c8c8c8;
+        border: 1px solid #ddd;
+        padding: 0 5px;
+        text-align: center;
+        @include border-radius(3px);
+        @media screen and (max-width: 720px) {
+            bottom: 0;
+            right: 15px;
+        }
+        &:hover {
+            border: 1px solid $color-blue;
+            background-color: $color-blue;
+            color: #fff;
+        }
+    }
+    .search {
+        float: left;
+        position: absolute;
+        bottom: -5px;
+        left: 10px;
+        height: 1.5rem;
+        width: 250px;
+        text-align: left;
+        padding: 3px;
+        font-size: 1.125rem;
+        line-height: 1;
+        color: $color-gray;
+        @include opacity(.66);
+        @include transition(all .5s);
+        @media screen and (max-width: 720px) {
+            bottom: -3px;
+            left: 5px;
+        }
+        &:before {
+            display: inline-block;
+            float: left;
+            position: absolute;
+            top: 3px;
+            left: 8px;
+            font-family: "iconfont";
+            content: "\e601";
+        }
+        input {
+            background-color: transparent;
+            outline: none;
+            border: none;
+            font: {
+                size: 14px;
+                weight: 600;
+            };
+            line-height: 18px;
+            height: 18px;
+            width: 100%;
+            padding: 0;
+            padding-left: 28px;
+            color: $color-gray;
+            &::-webkit-input-placeholder {
+                color: $color-gray;
+            }
+            &::-moz-placeholder {
+                color: $color-gray;
+            }
+            &:-ms-input-placeholder {
+                color: $color-gray;
+            }
+            &::placeholder {
+                color: $color-gray;
+            }
+        }
+        &:hover {
+            @include opacity(1);
+        }
+        &.active {
+            color: $color-blue;
+            @include opacity(1);
+            input {
+                color: $color-blue;
+                &::-webkit-input-placeholder {
+                    color: $color-blue;
+                }
+                &::-moz-placeholder {
+                    color: $color-blue;
+                }
+                &:-ms-input-placeholder {
+                    color: $color-blue;
+                }
+                &::placeholder {
+                    color: $color-blue;
+                }
+            }
+        }
+    }
+}
+/* content */
+.content {
+    &:after,
+    &:before {
+        display: table;
+        content: '';
+    }
+    &:after {
+        clear: both;
+    }
+    .box{
+        float: left;
+        width: 380px;
+        padding: 15px;
+        @include transition(all .25s);
+        @media screen and (max-width: 1140px) {
+            width: (100% / 3);
+        }
+        @media screen and (max-width: 960px) {
+            width: 50%;
+        }
+        @media screen and (max-width: 720px) {
+            width: 100%;
+            padding: 10px;
+        }
+    }
+}
+/* section */
+section {
+    position: relative;
+    background-color: #fff;
+    @include border-radius(5px);
+    @include box-shadow(1px 2px 5px #ddd);
+}
+.section-heading {
+    padding: 10px 15px;
+    font: {
+        size: 1.25rem;
+        weight: 900;
+    }
+}
+/* list */
+ul.list li {
+    position: relative;
+}
+.list-title {
+    padding: 7px 15px;
+    font-weight: 700;
+    border-top: 1px solid #eee;
+}
+.list-item {
+    position: relative;
+    border-top: 1px solid #eee;
+    @include transition(all .25s ease-in-out);
+    .searchable {
+        visibility: hidden;
+        @include opacity(0);
+        @include transition(all .4s ease-in-out);
+        @media screen and (max-width: 720px) {
+            visibility: visible;
+            @include opacity(1);
+        }
+    }
+    &:hover{
+        .searchable {
+            visibility: visible;
+            @include opacity(1);
+        }
+        background-color: #f8f8f8;
+        &>a {
+            border-color: $color-blue;
+        }
+    }
+    &>a {
+        display: block;
+        height: 36px;
+        line-height: 22px;
+        padding: 7px 35px;
+        color: #555;
+        border-left: 3px solid transparent;
+    }
+    .item-logo {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        margin-top: -8px;
+        width: 16px;
+        height: 16px;
+        @include opacity(.88);
+        &>img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .item-link-list {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        margin-top: -9px;
+        height: 18px;
+        .item-link {
+            float: left;
+            &>a {
+                float: left;
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 18px;
+                margin: 0 2px;
+                color: #d8d8d8;
+                @include opacity(.9);
+                &:hover {
+                    color: lighten($color-blue, 5%);
+                }
+                &.home:before {
+                    content: "\e600";
+                }
+                &.github:before {
+                    content: "\e602";
+                }
+                &.baidu:before {
+                    content: "\e603";
+                }
+                &.google:before {
+                    content: "\e604";
+                }
+            }
+        }
+        .item-wall {
+            float: left;
+            width: 1px;
+            height: 10px;
+            background-color: #e6e6e6;
+            margin: 4px;
+        }
+    }
+}
+/* footer */
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #bbb;
+    text-align: center;
+    padding: 50px 0 10px;
+    p {
+        margin: 0 auto;
+    }
+    .line {
+        width: 65px;
+        height: 0;
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 11px;
+    }
+    .author {
+        position: absolute;
+        right: 15px;
+        bottom: 8px;
+        font-size: 11px;
+        a {
+            color: #cfcfcf;
+        }
+        @media screen and (max-width: 720px) {
+            position: static;
+            line-height: 17px;
+            margin-bottom: 5px;
+        }
+    }
+    .issues {
+        color: #bbb;
+        border-bottom: 1px dashed #ccc;
+    }
+}
+
+::-webkit-scrollbar {
+    background-color: #f1f1f1;
+    overflow: visible;
+    width: 3px;
+    height: 3px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .2);
+    background-clip: padding-box;
+    min-height: 15px;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+}
+::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+::-webkit-scrollbar-thumb:vertical:active {
+    background-color: rgba(0, 0, 0, .5);
+}
+::-webkit-scrollbar-button {
+    height: 0;
+    width: 0;
+}
+::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 0 0 0 4px;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+::selection {
+    background: #e2e2e2;
+}
+::-moz-selection {
+    background: #e2e2e2;
+}
