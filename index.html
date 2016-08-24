@@ -10,16 +10,13 @@
 </head>
 <body>
 <!--[if IE]><p class="kill-ie">微软都放弃了IE，为啥你却还不放弃？</p><![endif]-->
+<div class="corner-github">
+    <a v-if="main.github" :href="main.github" target="_blank">Github</a>
+</div>
 <template v-if="main.status">
-    <div class="corner-github">
-        <a v-if="main.github" :href="main.github" target="_blank">Github</a>
-    </div>
     <h1 class="main-title">Dev-Nav</h1>
 </template>
 <template v-else>
-    <div class="corner-github">
-        <a v-if="data.info.github" :href="data.info.github" target="_blank">Github</a>
-    </div>
     <div class="container" v-if="data.info">
         <header>
             <h2 class="name_en">{{data.info.en_name}}</h2>
