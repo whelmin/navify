@@ -1,6 +1,6 @@
-dev-nav 开发导航
+Dev-Nav 开发导航
 ===
-Developer Navigation - `前端`
+Developer Navigation - `前端` `Java Web`
 
 ![dev-nav](https://raw.githubusercontent.com/mcc108/MarkdownPhotos/master/dev-nav/dev-nav.png)
 
@@ -21,9 +21,30 @@ dev-nav
 
 ### 当前所包含的方向
 
-|   方向   |  简写   |   对应数据文件  |         网址         |
-|:-------:|:------:|:-------------:|:--------------------|
-|   前端   |  `fe`  |   fe.json     |  http://fe.congm.in |
+|   方向    |  简写      |   对应数据文件   |         网址                      |
+|:--------:|:---------:|:--------------:|:---------------------------------|
+|   前端    |  `fe`     |   fe.json      | http://fe.congm.in               |
+| Java Web | `javaweb` |   javaweb.json | http://dev-nav.congm.in/#javaweb |
+
+### 如何访问
+
+该项目是通过js判断所访问到index.html的网址的`hash`、`pathname`、`hostname`来判定加载的哪个方向的数据。
+
+如:
+```
+http://***.**/#fe
+http://***.**/fe
+http://fe.***.**/
+都是访问到的`fe`前端数据
+```
+
+优先级 `hash` > `pathname` > `hostname`
+
+如:
+```
+http://fe.***.**/javaweb/#php
+访问到的是`php`数据, 因为hash优先级更高
+```
 
 ---
 
