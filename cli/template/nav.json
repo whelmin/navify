@@ -1,0 +1,26 @@
+[{
+    "heading": "Heading",
+    "content": [{
+        "item": [ {
+            "name": "Navify",
+            "info": "🌏 An elegant website navigation page generator - 网址导航页生成器",
+            "link": {
+                "home": "https://github.com/mcc108/navify",
+                "github": "https://github.com/mcc108/navify"
+            }
+        }]
+    }, {
+        "title": "Title",
+        "item": [{
+            "name": "Google",
+            "link": {
+                "home": "https://www.google.com"
+            }
+        }, {
+            "name": "Baidu",
+            "link": {
+                "home": "https://www.baidu.com"
+            }
+        }]
+    }]
+}]
