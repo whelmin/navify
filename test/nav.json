@@ -26,7 +26,8 @@
             "info": "Normalize.css是xxx",
             "link": {
                 "home": "http://necolas.github.io/normalize.css",
-                "github": "https://github.com/necolas/normalize.css"
+                "github": "https://github.com/necolas/normalize.css",
+                "测试": "javascript:void(0);"
             }
         }]
     }]

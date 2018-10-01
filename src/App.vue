@@ -44,11 +44,11 @@
                                         {{ item.name }}
                                     </div>
                                 </a>
-                                <div class="item-info-link">
+                                <!--<div class="item-info-link">
                                     <i class="icon" v-if="item.info">
                                         <img :src="config.icon['info']"/>
                                     </i>
-                                </div>
+                                </div>-->
                                 <ul class="item-link-list">
                                     <li class="item-link"
                                         v-for="(val, key) in item.link" :key="key">
@@ -56,6 +56,7 @@
                                             <i class="icon" v-if="config.icon[key]">
                                                 <img :src="config.icon[key]"/>
                                             </i>
+                                            <span class="item-link-text" v-else>{{ key }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -71,7 +72,7 @@
                        target="_blank">{{ config.author.name }}</a>
                 </p>
                 <p v-if="title.full">{{ title.full }}</p>
-                <p><a href="https://github.com/mcc108/navify" target="_blank">Powered by Navify</a></p>
+                <p>Powered by <a href="https://github.com/mcc108/navify" target="_blank">Navify</a></p>
             </footer>
         </div>
     </transition>
