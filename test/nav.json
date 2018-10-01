@@ -1,0 +1,107 @@
+[{
+    "heading": "文档",
+    "content": [{
+        "item": [{
+            "name": "MDN",
+            "link": {
+                "home": "https://developer.mozilla.org/zh-CN"
+            }
+        }]
+    }, {
+        "title": "入门",
+        "item": [{
+            "name": "W3school",
+            "info": "W3school前端入门",
+            "link": {
+                "home": "http://www.w3school.com.cn"
+            }
+        }]
+    }]
+}, {
+    "heading": "CSS库",
+    "content": [{
+        "title": "CSS Resets",
+        "item": [{
+            "name": "Normalize.css",
+            "info": "Normalize.css是xxx",
+            "link": {
+                "home": "http://necolas.github.io/normalize.css",
+                "github": "https://github.com/necolas/normalize.css"
+            }
+        }]
+    }]
+}, {
+    "heading": "UI框架/组件库",
+    "content": [{
+        "item": [{
+            "name": "Bootstrap",
+            "info": "Bootstrap是xxx",
+            "link": {
+                "home": "http://www.bootcss.com",
+                "github": "https://github.com/twbs/bootstrap"
+            }
+        }, {
+            "name": "Materialize",
+            "link": {
+                "home": "http://materializecss.com",
+                "github": "https://github.com/Dogfalo/materialize"
+            }
+        }, {
+            "name": "Foundation",
+            "link": {
+                "home": "http://foundation.zurb.com",
+                "github": "https://github.com/zurb/foundation-sites"
+            }
+        }, {
+            "name": "Amaze UI",
+            "link": {
+                "home": "http://amazeui.org",
+                "github": "https://github.com/amazeui/amazeui"
+            }
+        }, {
+            "name": "Ant.Design",
+            "link": {
+                "home": "https://ant.design",
+                "github": "https://github.com/ant-design/ant-design"
+            }
+        }]
+    }]
+}, {
+    "heading": "CSS处理器",
+    "content": [{
+        "item": [{
+            "name": "Sass",
+            "link": {
+                "home": "http://sass-lang.com",
+                "github": "https://github.com/sass/sass"
+            }
+        }, {
+            "name": "Less",
+            "link": {
+                "home": "http://lesscss.org",
+                "github": "https://github.com/less/less.js"
+            }
+        }, {
+            "name": "Stylus",
+            "link": {
+                "home": "http://stylus-lang.com",
+                "github": "https://github.com/stylus/stylus"
+            }
+        }, {
+            "name": "PostCSS",
+            "link": {
+                "home": "http://postcss.org",
+                "github": "https://github.com/postcss/postcss"
+            }
+        }]
+    }, {
+        "title": "Sass库",
+        "item": [{
+            "name": "Compass",
+            "link": {
+                "home": "http://compass-style.org",
+                "github": "https://github.com/Compass/compass"
+            }
+        }]
+    }]
+}]

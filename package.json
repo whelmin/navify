@@ -1,0 +1,50 @@
+{
+  "name": "navify",
+  "version": "0.1.0",
+  "main": "dist/navify.min.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --mode=development --open",
+    "build": "webpack --mode=production",
+    "update": "npm-check -u",
+    "update:cnpm": "cross-env NPM_CHECK_INSTALLER=cnpm npm-check -u"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "lodash": "^4.17.11",
+    "normalize.css": "^8.0.0",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/runtime": "^7.0.0",
+    "autoprefixer": "^9.1.5",
+    "babel-eslint": "^9.0.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "image-webpack-loader": "^4.3.1",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "npm-check": "^5.9.0",
+    "postcss-loader": "^3.0.0",
+    "progress-bar-webpack-plugin": "^1.11.0",
+    "url-loader": "^1.1.1",
+    "vue-loader": "^15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.8"
+  }
+}
