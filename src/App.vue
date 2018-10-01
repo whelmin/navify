@@ -66,9 +66,8 @@
             </div>
             <footer>
                 <p class="line"></p>
-                <p class="author">
-                    <a v-if="config.author.name"
-                       :href="config.author.link || 'javascript:void(0);'"
+                <p class="author" v-if="config.author.name">
+                    <a :href="config.author.link || 'javascript:void(0);'"
                        target="_blank">{{ config.author.name }}</a>
                 </p>
                 <p v-if="title.full">{{ title.full }}</p>
