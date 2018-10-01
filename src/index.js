@@ -22,7 +22,6 @@ const defaultConfig = {
     },
 };
 window.Navify = merge(defaultConfig, window.Navify);
-console.log(JSON.stringify(window.Navify, null, 4));
 
 // vm
 const vm = new Vue({
