@@ -4,13 +4,13 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
-const isProd = process.env.NODE_ENV === 'production';
+let isProd = process.env.NODE_ENV === 'production';
 
 // 解析路径
 const resovle = (...dir) => path.join(__dirname, ...dir);
 
 // webpack config
-const webpackConfig = {
+const getWebpackConfig = () => ({
     entry: resovle('src/index.js'),
     output: {
         path: resovle('dist'),
@@ -88,6 +88,9 @@ const webpackConfig = {
         },
         historyApiFallback: false, // History模式路由
     }
-};
+});
 
-module.exports = webpackConfig;
+module.exports = (env, argv) => {
+    isProd = argv.mode === 'production';
+    return getWebpackConfig();
+};
