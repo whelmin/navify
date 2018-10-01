@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
 let isProd = process.env.NODE_ENV === 'production';
@@ -42,7 +43,7 @@ const getWebpackConfig = () => ({
                 test: /\.(less|css)$/,
                 use: [
                     { loader: 'vue-style-loader' },
-                    { loader: 'css-loader?minimize' },
+                    { loader: 'css-loader' + (isProd ? '?minimize' : '') },
                     { loader: 'postcss-loader' },
                     { loader: 'less-loader' },
                 ]
@@ -69,7 +70,13 @@ const getWebpackConfig = () => ({
     plugins: [
         new ProgressBarPlugin(),
         new VueLoaderPlugin(),
-        ...(isProd ? [] : [
+        ...(isProd ? [
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    output: { comments: false }
+                }
+            }),
+        ] : [
             new webpack.HotModuleReplacementPlugin(),
             new FriendlyErrorsPlugin(),
             new webpack.NoEmitOnErrorsPlugin(),

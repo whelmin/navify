@@ -351,10 +351,9 @@ ul.list li {
             float: right;
             & > a {
                 display: inline-block;
-                width: 18px;
                 height: 18px;
                 line-height: 18px;
-                font-size: 1.125rem;
+                font-size: 0;
                 margin: 0 2px;
                 color: #d8d8d8;
                 opacity: .9;
@@ -365,6 +364,11 @@ ul.list li {
                         filter: drop-shadow(1.125rem 0 #d2d2d2);
                         transition: all .25s ease-in-out;
                     }
+                }
+                .item-link-text {
+                    font-size: .8rem;
+                    font-weight: bold;
+                    vertical-align: -5px;
                 }
                 &:hover {
                     color: lighten(@color-blue, 3%);

@@ -1,6 +1,6 @@
 {
   "name": "navify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/navify.min.js",
   "scripts": {
     "start": "npm run dev",
@@ -47,6 +47,7 @@
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "serve-static": "^1.13.2",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.1",
     "vue-loader": "^15.4.2",
     "vue-style-loader": "^4.1.2",

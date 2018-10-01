@@ -44,11 +44,11 @@
                                         {{ item.name }}
                                     </div>
                                 </a>
-                                <div class="item-info-link">
+                                <!--<div class="item-info-link">
                                     <i class="icon" v-if="item.info">
                                         <img :src="config.icon['info']"/>
                                     </i>
-                                </div>
+                                </div>-->
                                 <ul class="item-link-list">
                                     <li class="item-link"
                                         v-for="(val, key) in item.link" :key="key">
@@ -56,6 +56,7 @@
                                             <i class="icon" v-if="config.icon[key]">
                                                 <img :src="config.icon[key]"/>
                                             </i>
+                                            <span class="item-link-text" v-else>{{ key }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -66,12 +67,12 @@
             </div>
             <footer>
                 <p class="line"></p>
-                <p class="author" v-if="config.author.name">
-                    <a :href="config.author.link || 'javascript:void(0);'"
-                       target="_blank">{{ config.author.name }}</a>
+                <p class="author" v-if="author.name">
+                    <a :href="author.link || 'javascript:void(0);'"
+                       target="_blank">{{ author.name }}</a>
                 </p>
                 <p v-if="title.full">{{ title.full }}</p>
-                <p><a href="https://github.com/mcc108/navify" target="_blank">Powered by Navify</a></p>
+                <p>Powered by <a href="https://github.com/mcc108/navify" target="_blank">Navify</a></p>
             </footer>
         </div>
     </transition>
@@ -85,6 +86,7 @@
 <script>
 import Ajax from '@/utils/ajax';
 import Waterfall from '@/utils/waterfall';
+import isPlainObject from 'lodash/isPlainObject';
 
 export default {
     name: 'app',
@@ -110,7 +112,7 @@ export default {
     computed: {
         // 解析config.title
         title() {
-            return typeof this.config.title === 'object' ? this.config.title : {
+            return isPlainObject(this.config.title) ? this.config.title : {
                 full: this.config.title,
                 alias: null,
                 en: null,
@@ -118,7 +120,7 @@ export default {
         },
         // 解析config.author
         author() {
-            return typeof this.config.author === 'object' ? this.config.author : {
+            return isPlainObject(this.config.author) ? this.config.author : {
                 name: this.config.author,
                 link: null,
             };
@@ -128,8 +130,11 @@ export default {
         // 站点标题
         title: {
             handler(title) {
-                const mainTitle = title.full || title.alias;
-                document.title = `${mainTitle ? `${mainTitle} - ` : ''}${title.en}`;
+                const titles = [
+                    title.full || title.alias || '',
+                    title.en || ''
+                ].filter(e => e);
+                document.title = titles.join(' - ');
             },
             immediate: true,
         },
