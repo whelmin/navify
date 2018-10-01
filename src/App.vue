@@ -86,6 +86,7 @@
 <script>
 import Ajax from '@/utils/ajax';
 import Waterfall from '@/utils/waterfall';
+import isPlainObject from 'lodash/isPlainObject';
 
 export default {
     name: 'app',
@@ -111,7 +112,7 @@ export default {
     computed: {
         // 解析config.title
         title() {
-            return typeof this.config.title === 'object' ? this.config.title : {
+            return isPlainObject(this.config.title) ? this.config.title : {
                 full: this.config.title,
                 alias: null,
                 en: null,
@@ -119,7 +120,7 @@ export default {
         },
         // 解析config.author
         author() {
-            return typeof this.config.author === 'object' ? this.config.author : {
+            return isPlainObject(this.config.author) ? this.config.author : {
                 name: this.config.author,
                 link: null,
             };
@@ -129,8 +130,11 @@ export default {
         // 站点标题
         title: {
             handler(title) {
-                const mainTitle = title.full || title.alias;
-                document.title = `${mainTitle ? `${mainTitle} - ` : ''}${title.en}`;
+                const titles = [
+                    title.full || title.alias || '',
+                    title.en || ''
+                ].filter(e => e);
+                document.title = titles.join(' - ');
             },
             immediate: true,
         },
