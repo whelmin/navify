@@ -9,25 +9,21 @@
 <body>
 <div id="app"></div>
 <script>
+    // 配置文档:
+    // https://github.com/mcc108/navify
     window.Navify = {
-        // `挂载元素` 默认 #app
         // el: '#app',
-        // `json文件来源` 默认为同路径 ./nav.json, 此外还可配置http链接
         // json: './nav.json',
-        // `title标题` 如果为对象:可设full/alias/en三属性; 如果为其他(字符串):即为title.full含义
         title: {
-            alias: '前端', // 站点中文简称
-            full: 'Web前端导航', // 站点全称
-            en: 'Front End', // 站点英文名
+            alias: '前端',
+            full: 'Web前端导航',
+            en: 'Front End',
         },
-        // `author作者` 如果为对象:可设name/link两属性; 如果为其他:即为author.name含义
         // author: {
         //     name: '@Cong Min',
         //     link: 'https://congm.in',
         // },
-        // `github链接` 如果有github链接:则页面右上角会出现Github标志
         github: 'https://github.com/mcc108/navify',
-        // `icon图标地址` 配置item-link的key所对应的icon图标地址，如果没有配置则（默认home/github/info不需要配置），可填写相对地址或http网络地址
         icon: {
             // 'share': 'https://.../share.png',
         }

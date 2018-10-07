@@ -10,9 +10,9 @@ const defaultConfig = {
     el: '#app',
     // `json文件来源` 默认 ./nav.json（与页面同路径的），此外还可配置http链接
     json: './nav.json',
-    // `title标题` 如果为对象:可设full/alias/en三属性; 如果为其他:即为title.full含义
+    // `title标题` 如果为对象:可设full/alias/en三属性; 如果为字符串:即默认是title.full
     title: 'Navify',
-    // `author作者` 如果为对象:可设name/link两属性; 如果为其他:即为title.name含义
+    // `author作者` 如果为对象:可设name/link两属性; 如果为字符串:即默认是title.name
     author: null,
     icon: {
         'home': require('@/static/home.svg'),
