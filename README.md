@@ -31,7 +31,7 @@ $ cd <dir>                   // 进入项目
 $ navify serve               // 实时预览
 ```
 
-在接下来的修改配置与数据过程中，项目将实时在本地Web端口 `8520` 中呈现。
+在接下来的修改配置与数据过程中，项目将实时在本地Web端口 `8520` 中呈现。
 
 **2.3、`index.html` 配置项**
 
@@ -85,7 +85,7 @@ $ navify serve               // 实时预览
 
 ```js
 // List[n].content
-// Group - 类别分组列表
+// Group - 类别分组列表
 [
   {
     "title": "分组名(可无)",
@@ -99,7 +99,7 @@ $ navify serve               // 实时预览
 // Item - 网站列表
 [
   {
-    "name": "网站名(必需)",
+    "name": "网站名(必需)",
     "info": "网站简介(可无)",
     "link": {
       "home": "网站主页地址(必需)",
@@ -148,7 +148,7 @@ GitHub Pages 支持从以下代码源读取html文件
 * `docs/` 目录
 * `master` 或 `gh-pages` 分支
 
-将代码提交到github，在对应的github仓库 **设置选项** 开启 `GitHub Pages` 功能，选择 `master branch` 选项并保存，即可访问。还可以绑定自定义的域名。
+将代码提交到github，在对应的github仓库 **设置选项** 开启 `GitHub Pages` 功能，选择 `master branch` 选项并保存，即可访问。还可以绑定自定义的域名。
 
 ![GitHub Pages 部署截图](https://user-images.githubusercontent.com/13345272/46583007-727aa680-ca82-11e8-8548-ec6defbfb04b.png)
 ---
