@@ -1,5 +1,9 @@
 # Navify
 
+[![npm version](https://img.shields.io/npm/v/navify.svg?style=flat-square)](https://www.npmjs.com/package/navify)
+[![npm total downloads](https://img.shields.io/npm/dt/navify.svg?style=flat-square)](https://www.npmjs.com/package/navify)
+[![License](https://img.shields.io/github/license/mcc108/navify.svg?style=flat-square)](https://github.com/mcc108/navify/blob/master/LICENSE)
+
 🌏 An elegant website navigation page generator - 网址导航页生成器
 
 ## 如何使用
@@ -15,7 +19,7 @@ $ npm install -g navify
 **2.1、创建项目**
 
 ```bash
-$ navify create <dir>        // 创建项目名
+$ navify create <dir>        // 创建项目名
 ```
 
 在你的 `<dir>` 目录下，会自动生成可进行配置的 `index.html` 和 `nav.json`
@@ -27,7 +31,7 @@ $ cd <dir>                   // 进入项目
 $ navify serve               // 实时预览
 ```
 
-在接下里修改配置与数据过程中，项目将实时在本地Web端口 `8520` 中呈现。
+在接下来的修改配置与数据过程中，项目将实时在本地Web端口 `8520` 中呈现。
 
 **2.3、`index.html` 配置项**
 
@@ -57,7 +61,7 @@ $ navify serve               // 实时预览
 |:---:|:----------:|:---------|:----|
 | **el** | `String` | **挂载元素** | '#app' |
 | **json** | `String` | **json文件来源**。本地相对路径或者网络链接 | './nav.json' |
-| **title** | `String/Object` | **站点名称**。若值为对象：可设 **`full`(全称)** / **`alias`(简称)** / **`en`(英文名)** 3个属性；若值为字符串：则解析为站点全称 `title.full` | 'Navify' |
+| **title** | `String/Object` | **站点名称**。若值为对象：可设 **`full`(全称)** / **`alias`(简称)** / **`en`(英文名)** 3个属性；若值为字符串：则解析为站点全称 `title.full` | 'Navify' |
 | **author** | `String/Object` | **站点作者信息**。若值为对象：可设 **`name`(名字)** / **`link`(个人主页)** 2个属性；若值为字符串：则解析为作者名字 `author.name` | null |
 | **github** | `String` | **Github链接**。设置后页面右上角会出现Github标志 | null |
 | **icon** | `Object` | **站点自定义图标**。一个Key-Value键值对象：`key` 是对应的icon名称(即nav.json内item.link的key)，`value` 是icon地址(可填写本地相对路径或者网络链接)，默认 home/github 已经拥有了内置的icon | {} |
@@ -67,7 +71,7 @@ $ navify serve               // 实时预览
 
 关于 `nav.json` 的数据结构，你应该遵守以下规则格式进行网站的增删改操作。
 
-```json
+```js
 // nav.json
 // List - 分类列表
 [
@@ -79,7 +83,7 @@ $ navify serve               // 实时预览
 ]
 ```
 
-```json
+```js
 // List[n].content
 // Group - 类别分组列表
 [
@@ -90,7 +94,7 @@ $ navify serve               // 实时预览
 ]
 ```
 
-```json
+```js
 // Group[m].item
 // Item - 网站列表
 [
