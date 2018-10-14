@@ -19,8 +19,10 @@
     }]
 }, {
     "heading": "CSS库",
+	"info": "CSS库是xxx",
     "content": [{
         "title": "CSS Resets",
+		"info": "CSS Resets是xxx",
         "item": [{
             "name": "Normalize.css",
             "info": "Normalize.css是xxx",
@@ -33,6 +35,7 @@
     }]
 }, {
     "heading": "UI框架/组件库",
+	"info": "UI框架/组件库是xxx，UI框架/组件库是xxx，UI框架/组件库是xxx，UI框架/组件库是xxx，UI框架/组件库是xxx，UI框架/组件库是xxx，UI框架/组件库是xxx，UI框架/组件库是xxx，UI框架/组件库是xxx。",
     "content": [{
         "item": [{
             "name": "Bootstrap",

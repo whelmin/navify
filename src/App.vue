@@ -25,17 +25,49 @@
             <!-- content -->
             <div class="content">
                 <div class="box"
-                     v-for="(section, index) in list"
-                     :key="index">
+                     v-for="(section, sIndex) in list"
+                     :key="sIndex">
                     <section>
-                        <div class="section-heading">{{ section.heading }}</div>
+                        <div class="section-heading">
+							<div class="heading-text">{{ section.heading }}</div>
+							<div class="info-link"
+								v-if="section.info"
+								@mouseleave="$set(popoverSwitch, sIndex, false)">
+								<i class="icon"
+									@mouseenter="$set(popoverSwitch, sIndex, true)">
+									<img :src="config.icon['info']"/>
+								</i>
+								<transition name="popover-fade">
+									<div class="info-popover"
+										v-show="popoverSwitch[sIndex]">
+										<div class="info-popover-content">{{ section.info }}</div>
+									</div>
+								</transition>
+							</div>
+						</div>
                         <ul class="list"
-                            v-for="(group, index) in section.content"
-                            :key="index">
-                            <li class="list-title" v-if="group.title">{{ group.title }}</li>
+                            v-for="(group, gIndex) in section.content"
+                            :key="gIndex">
+                            <li class="list-title" v-if="group.title">
+								<div class="group-title">{{ group.title }}</div>
+                                <div class="info-link"
+									v-if="group.info"
+									@mouseleave="$set(popoverSwitch, [sIndex, gIndex].join('-'), false)">
+									<i class="icon"
+										@mouseenter="$set(popoverSwitch, [sIndex, gIndex].join('-'), true)">
+										<img :src="config.icon['info']"/>
+									</i>
+									<transition name="popover-fade">
+										<div class="info-popover"
+											v-show="popoverSwitch[[sIndex, gIndex].join('-')]">
+											<div class="info-popover-content">{{ group.info }}</div>
+										</div>
+									</transition>
+                                </div>
+							</li>
                             <li class="list-item"
-                                v-for="(item, index) in group.item"
-                                :key="index">
+                                v-for="(item, iIndex) in group.item"
+                                :key="iIndex">
                                 <a :href="item.link.home" target="_blank">
                                     <div class="item-logo" v-if="item.link">
                                         <img :src="favicon + item.link.home">
@@ -44,18 +76,25 @@
                                         {{ item.name }}
                                     </div>
                                 </a>
-                                <!--<div class="item-info-link">
-                                    <i class="icon" v-if="item.info">
-                                        <img :src="config.icon['info']"/>
-                                    </i>
-                                </div>-->
+                                <div class="info-link"
+									v-if="item.info"
+									@mouseleave="$set(popoverSwitch, [sIndex, gIndex, iIndex].join('-'), false)">
+									<i class="icon"
+										@mouseenter="$set(popoverSwitch, [sIndex, gIndex, iIndex].join('-'), true)">
+										<img :src="config.icon['info']"/>
+									</i>
+									<transition name="popover-fade">
+										<div class="info-popover"
+											v-show="popoverSwitch[[sIndex, gIndex, iIndex].join('-')]">
+											<div class="info-popover-content">{{ item.info }}</div>
+										</div>
+									</transition>
+                                </div>
                                 <ul class="item-link-list">
                                     <li class="item-link"
                                         v-for="(val, key) in item.link" :key="key">
                                         <a :href="val" target="_blank">
-                                            <i class="icon" v-if="config.icon[key]">
-                                                <img :src="config.icon[key]"/>
-                                            </i>
+                                            <i class="icon" v-if="config.icon[key]"><img :src="config.icon[key]"/></i>
                                             <span class="item-link-text" v-else>{{ key }}</span>
                                         </a>
                                     </li>
@@ -100,13 +139,13 @@ export default {
             loading: true, // 加载中
             config: window.Navify, // 全局配置
             list: [], // 列表
-            search: { // 搜索
+			search: { // 搜索
+				searchableTextEl: '.heading-text, .group-title, .item-name', // 可搜索的文本元素
                 status: false, // 搜索状态
                 content: '', // 搜索内容
             },
-            favicon: 'https://api.byi.pw/favicon/?url=',
-            baidu: 'https://www.baidu.com/s?wd=',
-            google: 'https://www.google.com/#q=',
+            favicon: window.Navify.favicon,
+			popoverSwitch: {}, // { key: Boolean }
         };
     },
     computed: {
@@ -152,7 +191,7 @@ export default {
     methods: {
         // ajax - json
         getData(jsonFile) {
-            Ajax.get(jsonFile).then((data) => {
+            Ajax.get(jsonFile).then(data => {
                 this.list = data || [];
                 this.loading = false;
                 this.initWaterfall();
@@ -191,7 +230,7 @@ export default {
                 el.classList.remove('hidden'); // 清除之前无搜索结果时隐藏的.box
                 if (!text) return; // 如果搜索的字符串为空，不进行下列操作
                 let match = false; // 该box内是否含有匹配内容
-                const range = el.querySelectorAll('.section-heading, .list-title, .item-name'); // 可搜索区域
+                const range = el.querySelectorAll(this.search.searchableTextEl); // 可搜索区域
                 range.forEach((item) => {
                     if (item.innerText.match(reg)) {
                         this.highlight(item, text); // 目标结点匹配则执行高亮标记函数
@@ -246,7 +285,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 @import '~normalize.css';
 /* common */
@@ -289,6 +327,12 @@ ol, ul {
     transition: opacity 1s;
 }
 .fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+.popover-fade-enter-active, .popover-fade-leave-active {
+    transition: opacity .2s;
+}
+.popover-fade-enter, .popover-fade-leave-to {
     opacity: 0;
 }
 

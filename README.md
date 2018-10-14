@@ -52,7 +52,9 @@ $ navify serve               // 实时预览
         github: 'https://github.com/mcc108/navify',
         icon: {
             'share': 'https://.../share.png',
-        }
+		},
+		favicon: 'https://www.google.cn/s2/favicons?domain=',
+		// favicon: 'https://api.byi.pw/favicon/?url=' 国内备选
     };
 </script>
 ```
@@ -64,8 +66,8 @@ $ navify serve               // 实时预览
 | **title** | `String/Object` | **站点名称**。若值为对象：可设 **`full`(全称)** / **`alias`(简称)** / **`en`(英文名)** 3个属性；若值为字符串：则解析为站点全称 `title.full` | 'Navify' |
 | **author** | `String/Object` | **站点作者信息**。若值为对象：可设 **`name`(名字)** / **`link`(个人主页)** 2个属性；若值为字符串：则解析为作者名字 `author.name` | null |
 | **github** | `String` | **Github链接**。设置后页面右上角会出现Github标志 | null |
-| **icon** | `Object` | **站点自定义图标**。一个Key-Value键值对象：`key` 是对应的icon名称(即nav.json内item.link的key)，`value` 是icon地址(可填写本地相对路径或者网络链接)，默认 home/github 已经拥有了内置的icon | {} |
-
+| **icon** | `Object` | **站点链接自定义图标**。一个Key-Value键值对象：`key` 是对应的icon名称(即nav.json内item.link的key)，`value` 是icon地址(可填写本地相对路径或者网络链接)，默认 home/github 已经拥有了内置的icon。无对应icon时将以 key 作为文本链接。 | {} |
+| **favicon** | `String` | **favicon网站图标地址**。设置获取favicon的API服务商，默认Google-API | '' |
 
 **2.4、`nav.json` 数据格式**
 
@@ -77,6 +79,7 @@ $ navify serve               // 实时预览
 [
   {
     "heading": "类别名(必需)",
+    "info": "类别简介(可无)",
     "content": [ ... ]  // 类别列表
   },
   { ... }
@@ -89,6 +92,7 @@ $ navify serve               // 实时预览
 [
   {
     "title": "分组名(可无)",
+    "info": "分组简介(可无)",
     "item": [ ... ]  // 网站列表(数组)
   }
 ]
