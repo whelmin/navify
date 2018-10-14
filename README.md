@@ -61,13 +61,13 @@ $ navify serve               // 实时预览
 
 | 名称 | 类型 | 说明 | 默认值 |
 |:---:|:----------:|:---------|:----|
-| **el** | `String` | **挂载元素** | '#app' |
-| **json** | `String` | **json文件来源**。本地相对路径或者网络链接 | './nav.json' |
-| **title** | `String/Object` | **站点名称**。若值为对象：可设 **`full`(全称)** / **`alias`(简称)** / **`en`(英文名)** 3个属性；若值为字符串：则解析为站点全称 `title.full` | 'Navify' |
-| **author** | `String/Object` | **站点作者信息**。若值为对象：可设 **`name`(名字)** / **`link`(个人主页)** 2个属性；若值为字符串：则解析为作者名字 `author.name` | null |
-| **github** | `String` | **Github链接**。设置后页面右上角会出现Github标志 | null |
-| **icon** | `Object` | **站点链接自定义图标**。一个Key-Value键值对象：`key` 是对应的icon名称(即nav.json内item.link的key)，`value` 是icon地址(可填写本地相对路径或者网络链接)，默认 home/github 已经拥有了内置的icon。无对应icon时将以 key 作为文本链接。 | {} |
-| **favicon** | `String` | **favicon网站图标地址**。设置获取favicon的API服务商地址，国内可考虑 `https://api.byi.pw/favicon/?url=` | `https://www.google.cn/s2/favicons?domain=` |
+| **el** | `String` | **挂载元素** | `'#app'` |
+| **json** | `String` | **json文件来源**。本地相对路径或者网络链接 | `'./nav.json'` |
+| **title** | `String/Object` | **站点名称**。若值为对象：可设 **`full`(全称)** / **`alias`(简称)** / **`en`(英文名)** 3个属性；若值为字符串：则解析为站点全称 `title.full` | `'Navify'` |
+| **author** | `String/Object` | **站点作者信息**。若值为对象：可设 **`name`(名字)** / **`link`(个人主页)** 2个属性；若值为字符串：则解析为作者名字 `author.name` | `null` |
+| **github** | `String` | **Github链接**。设置后页面右上角会出现Github标志 | `null` |
+| **icon** | `Object` | **站点链接自定义图标**。一个Key-Value键值对象：`key` 是对应的icon名称(即nav.json内item.link的key)，`value` 是icon地址(可填写本地相对路径或者网络链接)，默认 home/github 已经拥有了内置的icon。无对应icon时将以 key 作为文本链接。 | `{}` |
+| **favicon** | `String` | **favicon网站图标地址**。设置获取favicon的API服务商地址，国内可考虑备选: `'https://api.byi.pw/favicon/?url='` | `'https://www.google.cn/s2/favicons?domain='` |
 
 **2.4、`nav.json` 数据格式**
 
