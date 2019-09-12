@@ -1,125 +1,132 @@
 <template>
-<div class="main">
+  <div class="main">
     <transition name="fade">
-        <!-- container -->
-        <div class="container">
-            <!-- header -->
-            <header>
-                <h2 class="title-en" v-if="title.en">{{ title.en }}</h2>
-                <h1 class="title-alias" v-if="title.alias">{{ title.alias }}</h1>
-                <h1 class="title-full" v-else-if="title.full">{{ title.full }}</h1>
-                <a v-if="title.full || title.alias" href="javascript:void(0);" class="tag">{{ title.full || title.alias }}</a>
-                <label class="search" :class="{'active': search.status}">
-                    <i class="icon">
-                        <img :src="config.icon['search']"/>
-                    </i>
-                    <input type="text"
-                           placeholder="搜索..."
-                           autocomplete="off"
-                           @focus="searchOnFocus"
-                           @blur="searchOnBlur"
-                           @input="searching"
-                           v-model="search.content">
-                </label>
-            </header>
-            <!-- content -->
-            <div class="content">
-                <div class="box"
-                     v-for="(section, sIndex) in list"
-                     :key="sIndex">
-                    <section>
-                        <div class="section-heading">
-							<div class="heading-text">{{ section.heading }}</div>
-							<div class="info-link"
-								v-if="section.info"
-								@mouseleave="$set(popoverSwitch, sIndex, false)">
-								<i class="icon"
-									@mouseenter="$set(popoverSwitch, sIndex, true)">
-									<img :src="config.icon['info']"/>
-								</i>
-								<transition name="popover-fade">
-									<div class="info-popover"
-										v-show="popoverSwitch[sIndex]">
-										<div class="info-popover-content">{{ section.info }}</div>
-									</div>
-								</transition>
-							</div>
-						</div>
-                        <ul class="list"
-                            v-for="(group, gIndex) in section.content"
-                            :key="gIndex">
-                            <li class="list-title" v-if="group.title">
-								<div class="group-title">{{ group.title }}</div>
-                                <div class="info-link"
-									v-if="group.info"
-									@mouseleave="$set(popoverSwitch, [sIndex, gIndex].join('-'), false)">
-									<i class="icon"
-										@mouseenter="$set(popoverSwitch, [sIndex, gIndex].join('-'), true)">
-										<img :src="config.icon['info']"/>
-									</i>
-									<transition name="popover-fade">
-										<div class="info-popover"
-											v-show="popoverSwitch[[sIndex, gIndex].join('-')]">
-											<div class="info-popover-content">{{ group.info }}</div>
-										</div>
-									</transition>
-                                </div>
-							</li>
-                            <li class="list-item"
-                                v-for="(item, iIndex) in group.item"
-                                :key="iIndex">
-                                <a :href="item.link.home" target="_blank">
-                                    <div class="item-logo" v-if="item.link">
-                                        <img :src="favicon + item.link.home">
-                                    </div>
-                                    <div class="item-name">
-                                        {{ item.name }}
-                                    </div>
-                                </a>
-                                <div class="info-link"
-									v-if="item.info"
-									@mouseleave="$set(popoverSwitch, [sIndex, gIndex, iIndex].join('-'), false)">
-									<i class="icon"
-										@mouseenter="$set(popoverSwitch, [sIndex, gIndex, iIndex].join('-'), true)">
-										<img :src="config.icon['info']"/>
-									</i>
-									<transition name="popover-fade">
-										<div class="info-popover"
-											v-show="popoverSwitch[[sIndex, gIndex, iIndex].join('-')]">
-											<div class="info-popover-content">{{ item.info }}</div>
-										</div>
-									</transition>
-                                </div>
-                                <ul class="item-link-list">
-                                    <li class="item-link"
-                                        v-for="(val, key) in item.link" :key="key">
-                                        <a :href="val" target="_blank">
-                                            <i class="icon" v-if="config.icon[key]"><img :src="config.icon[key]"/></i>
-                                            <span class="item-link-text" v-else>{{ key }}</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
+      <!-- container -->
+      <div class="container">
+        <!-- header -->
+        <header>
+          <h2 class="title-en" v-if="title.en">{{ title.en }}</h2>
+          <h1 class="title-alias" v-if="title.alias">{{ title.alias }}</h1>
+          <h1 class="title-full" v-else-if="title.full">{{ title.full }}</h1>
+          <a
+            v-if="title.full || title.alias"
+            href="javascript:void(0);"
+            class="tag"
+          >{{ title.full || title.alias }}</a>
+          <label class="search" :class="{'active': search.status}">
+            <i class="icon">
+              <img :src="config.icon['search']" />
+            </i>
+            <input
+              type="text"
+              placeholder="搜索..."
+              autocomplete="off"
+              @focus="searchOnFocus"
+              @blur="searchOnBlur"
+              @input="searching"
+              v-model="search.content"
+            />
+          </label>
+        </header>
+        <!-- content -->
+        <div class="content">
+          <div class="box" v-for="(section, sIndex) in list" :key="sIndex">
+            <section>
+              <div class="section-heading">
+                <div class="heading-text">{{ section.heading }}</div>
+                <div
+                  class="info-link"
+                  v-if="section.info"
+                  @mouseleave="$set(popoverSwitch, sIndex, false)"
+                >
+                  <i class="icon" @mouseenter="$set(popoverSwitch, sIndex, true)">
+                    <img :src="config.icon['info']" />
+                  </i>
+                  <transition name="popover-fade">
+                    <div class="info-popover" v-show="popoverSwitch[sIndex]">
+                      <div class="info-popover-content">{{ section.info }}</div>
+                    </div>
+                  </transition>
                 </div>
-            </div>
-            <footer>
-                <p class="line"></p>
-                <p class="author" v-if="author.name">
-                    <a :href="author.link || 'javascript:void(0);'"
-                       target="_blank">{{ author.name }}</a>
-                </p>
-                <p v-if="title.full">{{ title.full }}</p>
-                <p>Powered by <a href="https://github.com/mcc108/navify" target="_blank">Navify</a></p>
-            </footer>
+              </div>
+              <ul class="list" v-for="(group, gIndex) in section.content" :key="gIndex">
+                <li class="list-title" v-if="group.title">
+                  <div class="group-title">{{ group.title }}</div>
+                  <div
+                    class="info-link"
+                    v-if="group.info"
+                    @mouseleave="$set(popoverSwitch, [sIndex, gIndex].join('-'), false)"
+                  >
+                    <i
+                      class="icon"
+                      @mouseenter="$set(popoverSwitch, [sIndex, gIndex].join('-'), true)"
+                    >
+                      <img :src="config.icon['info']" />
+                    </i>
+                    <transition name="popover-fade">
+                      <div class="info-popover" v-show="popoverSwitch[[sIndex, gIndex].join('-')]">
+                        <div class="info-popover-content">{{ group.info }}</div>
+                      </div>
+                    </transition>
+                  </div>
+                </li>
+                <li class="list-item" v-for="(item, iIndex) in group.item" :key="iIndex">
+                  <a :href="item.link.home" target="_blank">
+                    <div class="item-logo" v-if="item.link">
+                      <img :src="favicon + item.link.home" />
+                    </div>
+                    <div class="item-name">{{ item.name }}</div>
+                  </a>
+                  <div
+                    class="info-link"
+                    v-if="item.info"
+                    @mouseleave="$set(popoverSwitch, [sIndex, gIndex, iIndex].join('-'), false)"
+                  >
+                    <i
+                      class="icon"
+                      @mouseenter="$set(popoverSwitch, [sIndex, gIndex, iIndex].join('-'), true)"
+                    >
+                      <img :src="config.icon['info']" />
+                    </i>
+                    <transition name="popover-fade">
+                      <div
+                        class="info-popover"
+                        v-show="popoverSwitch[[sIndex, gIndex, iIndex].join('-')]"
+                      >
+                        <div class="info-popover-content">{{ item.info }}</div>
+                      </div>
+                    </transition>
+                  </div>
+                  <ul class="item-link-list">
+                    <li class="item-link" v-for="(val, key) in item.link" :key="key">
+                      <a :href="val" target="_blank">
+                        <i class="icon" v-if="config.icon[key]">
+                          <img :src="config.icon[key]" />
+                        </i>
+                        <span class="item-link-text" v-else>{{ key }}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
+        <footer>
+          <p class="line"></p>
+          <p class="author" v-if="author.name">
+            <a :href="author.link || 'javascript:void(0);'" target="_blank">{{ author.name }}</a>
+          </p>
+          <p v-if="title.full">{{ title.full }}</p>
+          <p> Powered by <a href="https://github.com/whelmin/navify" target="_blank">Navify</a> </p>
+        </footer>
+      </div>
     </transition>
     <!-- github link -->
     <div class="corner-github" v-if="config.github">
-        <a :href="config.github" target="_blank">Github</a>
+      <a :href="config.github" target="_blank">Github</a>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -128,249 +135,277 @@ import Waterfall from '@/utils/waterfall';
 import isPlainObject from 'lodash/isPlainObject';
 
 export default {
-    name: 'app',
-    // components: {},
-    // directives: {},
-    // filters: {},
-    // mixins: [],
-    // props: {},
-    data() {
-        return {
-            loading: true, // 加载中
-            config: window.Navify, // 全局配置
-            list: [], // 列表
-			search: { // 搜索
-				searchableTextEl: '.heading-text, .group-title, .item-name', // 可搜索的文本元素
-                status: false, // 搜索状态
-                content: '', // 搜索内容
-            },
-            favicon: window.Navify.favicon,
-			popoverSwitch: {}, // { key: Boolean }
-        };
+  name: 'app',
+  // components: {},
+  // directives: {},
+  // filters: {},
+  // mixins: [],
+  // props: {},
+  data() {
+    return {
+      loading: true, // 加载中
+      config: window.Navify, // 全局配置
+      list: [], // 列表
+      search: {
+        searchableTextEl: '.heading-text, .group-title, .item-name', // 可搜索的文本元素
+        status: false, // 搜索状态
+        content: '', // 搜索内容
+      },
+      favicon: window.Navify.favicon,
+      popoverSwitch: {}, // { key: Boolean }
+    };
+  },
+  computed: {
+    // 解析config.title
+    title() {
+      return isPlainObject(this.config.title)
+        ? this.config.title
+        : {
+            full: this.config.title,
+            alias: null,
+            en: null,
+          };
     },
-    computed: {
-        // 解析config.title
-        title() {
-            return isPlainObject(this.config.title) ? this.config.title : {
-                full: this.config.title,
-                alias: null,
-                en: null,
-            };
-        },
-        // 解析config.author
-        author() {
-            return isPlainObject(this.config.author) ? this.config.author : {
-                name: this.config.author,
-                link: null,
-            };
+    // 解析config.author
+    author() {
+      return isPlainObject(this.config.author)
+        ? this.config.author
+        : {
+            name: this.config.author,
+            link: null,
+          };
+    },
+  },
+  watch: {
+    // 站点标题
+    title: {
+      handler(title) {
+        const titles = [title.full || title.alias || '', title.en || ''].filter(
+          e => e,
+        );
+        document.title = titles.join(' - ');
+      },
+      immediate: true,
+    },
+  },
+  // beforeCreate() {},
+  created() {
+    this.getData(window.Navify.json); // 获取数据
+  },
+  // beforeMount() {},
+  // mounted() {},
+  // beforeUpdate() {},
+  // updated() {},
+  // beforeDestroy() {},
+  // destroyed() {},
+  methods: {
+    // ajax - json
+    getData(jsonFile) {
+      Ajax.get(jsonFile)
+        .then(data => {
+          this.list = data || [];
+          this.loading = false;
+          this.initWaterfall();
+        })
+        .catch(() => {
+          this.loading = false;
+        });
+    },
+    // 初始化瀑布流
+    initWaterfall() {
+      this.$nextTick(function() {
+        this.waterfall();
+        this.$watch('list', this.waterfall, { deep: true });
+        window.addEventListener('resize', this.waterfall);
+      });
+    },
+    // 调用瀑布流
+    waterfall() {
+      Waterfall('.content', 3);
+    },
+    // 搜索
+    searchOnFocus() {
+      this.search.status = true;
+    },
+    searchOnBlur() {
+      if (!this.search.content) {
+        this.search.status = false;
+      }
+    },
+    searching() {
+      // 搜索input事件
+      const text = String(this.search.content).trim();
+      const reg = new RegExp(text, 'ig'); // 匹配全局大小写
+      const content = document.querySelector('.content');
+      const box = document.querySelectorAll('.box');
+      this.rmHighlight(content); // 移除所有之前的高亮内容
+      box.forEach(el => {
+        // 遍历.box
+        el.classList.remove('hidden'); // 清除之前无搜索结果时隐藏的.box
+        if (!text) return; // 如果搜索的字符串为空，不进行下列操作
+        let match = false; // 该box内是否含有匹配内容
+        const range = el.querySelectorAll(this.search.searchableTextEl); // 可搜索区域
+        range.forEach(item => {
+          if (item.innerText.match(reg)) {
+            this.highlight(item, text); // 目标结点匹配则执行高亮标记函数
+            match = true;
+          }
+        });
+        if (!match) {
+          // 是否有匹配，从而对.box进行隐藏
+          el.classList.add('hidden');
+        } else {
+          el.classList.remove('hidden');
         }
+      });
+      this.waterfall(); // 重置瀑布流
     },
-    watch: {
-        // 站点标题
-        title: {
-            handler(title) {
-                const titles = [
-                    title.full || title.alias || '',
-                    title.en || ''
-                ].filter(e => e);
-                document.title = titles.join(' - ');
-            },
-            immediate: true,
-        },
-    },
-    // beforeCreate() {},
-    created() {
-        this.getData(window.Navify.json); // 获取数据
-    },
-    // beforeMount() {},
-    // mounted() {},
-    // beforeUpdate() {},
-    // updated() {},
-    // beforeDestroy() {},
-    // destroyed() {},
-    methods: {
-        // ajax - json
-        getData(jsonFile) {
-            Ajax.get(jsonFile).then(data => {
-                this.list = data || [];
-                this.loading = false;
-                this.initWaterfall();
-            }).catch(() => {
-                this.loading = false;
-            });
-        },
-        // 初始化瀑布流
-        initWaterfall() {
-            this.$nextTick(function () {
-                this.waterfall();
-                this.$watch('list', this.waterfall, { deep: true });
-                window.addEventListener('resize', this.waterfall);
-            });
-        },
-        // 调用瀑布流
-        waterfall() {
-            Waterfall('.content', 3);
-        },
-        // 搜索
-        searchOnFocus() {
-            this.search.status = true;
-        },
-        searchOnBlur() {
-            if (!this.search.content) {
-                this.search.status = false;
-            }
-        },
-        searching() { // 搜索input事件
-            const text = String(this.search.content).trim();
-            const reg = new RegExp(text, 'ig'); // 匹配全局大小写
-            const content = document.querySelector('.content');
-            const box = document.querySelectorAll('.box');
-            this.rmHighlight(content); // 移除所有之前的高亮内容
-            box.forEach((el) => { // 遍历.box
-                el.classList.remove('hidden'); // 清除之前无搜索结果时隐藏的.box
-                if (!text) return; // 如果搜索的字符串为空，不进行下列操作
-                let match = false; // 该box内是否含有匹配内容
-                const range = el.querySelectorAll(this.search.searchableTextEl); // 可搜索区域
-                range.forEach((item) => {
-                    if (item.innerText.match(reg)) {
-                        this.highlight(item, text); // 目标结点匹配则执行高亮标记函数
-                        match = true;
-                    }
-                });
-                if (!match) { // 是否有匹配，从而对.box进行隐藏
-                    el.classList.add('hidden');
-                } else {
-                    el.classList.remove('hidden');
-                }
-            });
-            this.waterfall(); // 重置瀑布流
-        },
-        /* 关于搜索高亮功能, 可参见博文 [ https://i.congm.in/js-find ] */
-        highlight(el, value) { // 高亮
-            const childList = el.childNodes;
-            if (!childList.length || !value.length) return; // 无子节点或无查询值，则不进行下列操作
-            const reg = new RegExp(value, 'ig');
-            childList.forEach((el) => { // 遍历其内子节点
-                if (el.nodeType === 1 // 如果是元素节点
-                    && el.classList && !el.classList.contains('search-highlight') // 而且没有被标记高亮
-                    && !/(script|style|template)/i.test(el.tagName)) { // 并且元素标签不是script或style或template等特殊元素
-                    this.highlight(el, value); // 那么就继续遍历(递归)该元素节点
-                } else if (el.nodeType === 3) { // 如果是文本节点
-                    const highlightList = el.data.match(reg); // 得出文本节点匹配到的字符串数组
-                    if (!highlightList) return;
-                    const splitTextList = el.data.split(reg); // 分割多次匹配
-                    // 遍历分割的匹配数组，将匹配出的字符串加上.highlight并依次插入DOM
-                    el.parentNode.innerHTML = splitTextList.reduce(
-                        (html, splitText, i) =>
-                            html + splitText + (
-                                (i < splitTextList.length - 1)
-                                ? `<span class="search-highlight">${highlightList[i]}</span>`
-                                : `<template search-highlight>${el.data}</template>`
-                            ), // 同时给为匹配的template用于后续恢复
-                        '');
-                }
-            });
-        },
-        rmHighlight(el) { // 移除高亮
-            const highlightSpans = el.querySelectorAll('span.search-highlight');
-            highlightSpans.forEach((el) => { // 找到所有.highlight并遍历
-                if (!el.parentNode) return;
-                const template = el.parentNode.querySelector('template[search-highlight]');
-                if (!template) return;
-                // 找到父节点中的template，将自己内容替换为template内容
-                el.parentNode.innerHTML = el.parentNode.querySelector('template[search-highlight]').innerHTML;
-            });
+    /* 关于搜索高亮功能, 可参见博文 [ https://i.congm.in/js-find ] */
+    highlight(el, value) {
+      // 高亮
+      const childList = el.childNodes;
+      if (!childList.length || !value.length) return; // 无子节点或无查询值，则不进行下列操作
+      const reg = new RegExp(value, 'ig');
+      childList.forEach(el => {
+        // 遍历其内子节点
+        if (
+          el.nodeType === 1 && // 如果是元素节点
+          el.classList &&
+          !el.classList.contains('search-highlight') && // 而且没有被标记高亮
+          !/(script|style|template)/i.test(el.tagName)
+        ) {
+          // 并且元素标签不是script或style或template等特殊元素
+          this.highlight(el, value); // 那么就继续遍历(递归)该元素节点
+        } else if (el.nodeType === 3) {
+          // 如果是文本节点
+          const highlightList = el.data.match(reg); // 得出文本节点匹配到的字符串数组
+          if (!highlightList) return;
+          const splitTextList = el.data.split(reg); // 分割多次匹配
+          // 遍历分割的匹配数组，将匹配出的字符串加上.highlight并依次插入DOM
+          el.parentNode.innerHTML = splitTextList.reduce(
+            (html, splitText, i) =>
+              html +
+              splitText +
+              (i < splitTextList.length - 1
+                ? `<span class="search-highlight">${highlightList[i]}</span>`
+                : `<template search-highlight>${el.data}</template>`), // 同时给为匹配的template用于后续恢复
+            '',
+          );
         }
+      });
     },
+    rmHighlight(el) {
+      // 移除高亮
+      const highlightSpans = el.querySelectorAll('span.search-highlight');
+      highlightSpans.forEach(el => {
+        // 找到所有.highlight并遍历
+        if (!el.parentNode) return;
+        const template = el.parentNode.querySelector(
+          'template[search-highlight]',
+        );
+        if (!template) return;
+        // 找到父节点中的template，将自己内容替换为template内容
+        el.parentNode.innerHTML = el.parentNode.querySelector(
+          'template[search-highlight]',
+        ).innerHTML;
+      });
+    },
+  },
 };
 </script>
 
 <style lang="less">
-@import '~normalize.css';
+@import "~normalize.css";
 /* common */
 *,
 :after,
 :before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 html {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 body {
-    position: relative;
-    min-height: 100%;
-    overflow-x: hidden;
-    font-size: 16px;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: none;
+  position: relative;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
-ol, ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .hidden,
 [search-highlight] {
-    display: none;
+  display: none;
 }
 
 /* themes */
-@import './themes/normal.less';
+@import "./themes/normal.less";
 
 /* others */
-.fade-enter-active, .fade-leave-active {
-    transition: opacity 1s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
 }
-.fade-enter, .fade-leave-to {
-    opacity: 0;
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
-.popover-fade-enter-active, .popover-fade-leave-active {
-    transition: opacity .2s;
+.popover-fade-enter-active,
+.popover-fade-leave-active {
+  transition: opacity 0.2s;
 }
-.popover-fade-enter, .popover-fade-leave-to {
-    opacity: 0;
+.popover-fade-enter,
+.popover-fade-leave-to {
+  opacity: 0;
 }
 
 ::-webkit-scrollbar {
-    background-color: #f1f1f1;
-    overflow: visible;
-    width: 6px;
-    height: 6px;
+  background-color: #f1f1f1;
+  overflow: visible;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, .2);
-    background-clip: padding-box;
-    min-height: 15px;
-    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .05);
+  background-color: rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  min-height: 15px;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 ::-webkit-scrollbar-thumb:vertical:hover {
-    background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 ::-webkit-scrollbar-thumb:vertical:active {
-    background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 ::-webkit-scrollbar-button {
-    height: 0;
-    width: 0;
+  height: 0;
+  width: 0;
 }
 ::-webkit-scrollbar-track {
-    background-clip: padding-box;
-    border: solid transparent;
-    border-width: 0 0 0 4px;
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 0 0 0 4px;
 }
 ::-webkit-scrollbar-corner {
-    background: transparent;
+  background: transparent;
 }
 
 ::selection {
-    background: #e2e2e2;
+  background: #e2e2e2;
 }
 ::-moz-selection {
-    background: #e2e2e2;
+  background: #e2e2e2;
 }
 </style>

@@ -1,6 +1,6 @@
 {
   "name": "navify",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist/navify.min.js",
   "bin": {
     "navify": "./cli/bin/navify.js"
@@ -12,11 +12,11 @@
     "update": "npm-check -u",
     "update:cnpm": "cross-env NPM_CHECK_INSTALLER=cnpm npm-check -u"
   },
-  "homepage": "https://github.com/mcc108/navify",
-  "bugs": "https://github.com/mcc108/navify/issues",
+  "homepage": "https://github.com/whelmin/navify",
+  "bugs": "https://github.com/whelmin/navify/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mcc108/navify.git"
+    "url": "git://github.com/whelmin/navify.git"
   },
   "dependencies": {
     "chalk": "^2.4.1",

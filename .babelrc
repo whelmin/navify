@@ -1,16 +1,16 @@
 {
-    "presets": [
-        ["@babel/preset-env", {
-            "targets": {
-                "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-            },
-            // 是否将polyfill根据上述浏览器版本按需引入
-            "useBuiltIns": "usage"
-        }]
-    ],
-    "plugins": [
-        "@babel/plugin-transform-runtime",
-        "@babel/plugin-syntax-dynamic-import", // 支持es6懒加载语法
-        "transform-vue-jsx" // 支持vue-jsx
-    ]
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+      },
+      // 是否将polyfill根据上述浏览器版本按需引入
+      "useBuiltIns": "usage"
+    }]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-syntax-dynamic-import", // 支持es6懒加载语法
+    "transform-vue-jsx" // 支持vue-jsx
+  ]
 }
