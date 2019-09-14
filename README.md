@@ -51,8 +51,10 @@ Browser will open automatically `http://localhost:8520`
       link: 'https://congm.in',
     },
     github: 'https://github.com/whelmin/navify',
+    // Customized icon
+    // key is the icon, value is the icon url
     icon: {
-      'share': 'https://.../share.png', // Customized icon
+      'share': 'https://.../share.png',
     },
     favicon: 'https://www.google.cn/s2/favicons?domain=',
     // favicon: 'https://api.byi.pw/favicon/?url='
@@ -81,9 +83,13 @@ You should follow the below rules and formats to add, delete, and modify the jso
   {
     "heading": "category title",
     "info": "category info",
-    "content": [ ... ]
+    "content": [
+      ...
+    ]
   },
-  { ... }
+  {
+    ...
+  }
 ]
 ```
 
@@ -94,7 +100,9 @@ You should follow the below rules and formats to add, delete, and modify the jso
   {
     "title": "group title",
     "info": "group info",
-    "item": [ ... ]
+    "item": [
+      ...
+    ]
   }
 ]
 ```
@@ -114,45 +122,56 @@ You should follow the below rules and formats to add, delete, and modify the jso
 ]
 ```
 
-the Complete example:
+the complete example:
 
 ```json
-[{
-  "heading": "category 1",
-  "content": [{
-    "item": [{
-      "name": "item name 2",
-      "info": "item info 2",
-      "link": {
-        "home": "item website links 2",
-        "github": "item github links 2"
+[
+  {
+    "heading": "category 1",
+    "content": [
+      {
+        "item": [
+          {
+            "name": "item name 2",
+            "info": "item info 2",
+            "link": {
+              "home": "item website links 2",
+              "github": "item github links 2",
+            }
+          }
+        ]
       }
-    }]
+    ]
   },
   {
     "title": "group 1",
-    "item": [{
-      "name": "item name 1",
-      "link": {
-        "home": "item website links 1"
+    "item": [
+      {
+        "name": "item name 1",
+        "link": {
+          "home": "item website links 1"
+        }
       }
-    }]
+    ]
   }
-}]
+]
 ```
 
 ### 3. **Deployment**
 
-**方式一、Web server**
+**3.1 Web server**
 
-set `<dir>` folder in Web server
+set `<dir>` folder in Web server or use `Github Pages` to deploy.
 
-**方式二、Github Pages**
+**3.2 Github Pages**
 
 There're three places to deploy navify website for your Github repository:
 
 * `docs/` folder
-* `master` 或 `gh-pages` branch
+
+* `master` branch
+
+* `gh-pages` branch
 
 in your Github repository' `settings page`, choose the `master branch` and save, and you can bind a custom domain name with `CNAME` .
 
@@ -163,8 +182,8 @@ in your Github repository' `settings page`, choose the `master branch` and save,
 
 ### Contributors
 
-[@ Cong Min](https://congm.in) & [@ whelmin](https://whelm.in)
+[@ whelmin](https://whelm.in) & [@ Cong Min](https://congm.in)
 
 ### License
 
-[MIT](https://github.com/whelmin/navify/blob/master/LICENSE)
+[MIT License](https://github.com/whelmin/navify/blob/master/LICENSE)

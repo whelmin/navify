@@ -80,9 +80,13 @@ $ navify serve
   {
     "heading": "类别名(必需)",
     "info": "类别简介(可无)",
-    "content": [ ... ]  // 类别列表
+    "content": [
+      ...
+    ]
   },
-  { ... }
+  {
+    ...
+  }
 ]
 ```
 
@@ -93,7 +97,9 @@ $ navify serve
   {
     "title": "分组名(可无)",
     "info": "分组简介(可无)",
-    "item": [ ... ]  // 网站列表(数组)
+    "item": [
+      ...
+    ]
   }
 ]
 ```
@@ -116,33 +122,41 @@ $ navify serve
 较完整的例子：
 
 ```json
-[{
-  "heading": "类别名A",
-  "content": [{
-    "item": [{
-      "name": "网站名1",
-      "info": "网站名1的简介",
-      "link": {
-        "home": "网站名1的主页地址",
-        "github": "网站名1的Github地址"
+[
+  {
+    "heading": "类别名A",
+    "content": [
+      {
+        "item": [
+          {
+            "name": "网站名1",
+            "info": "网站名1的简介",
+            "link": {
+              "home": "网站名1的主页地址",
+              "github": "网站名1的Github地址"
+            }
+          }
+        ]
       }
-    }]
+    ]
   },
   {
     "title": "分组名a",
-    "item": [{
-      "name": "网站名2",
-      "link": {
-        "home": "网站名2的主页地址"
+    "item": [
+      {
+        "name": "网站名2",
+        "link": {
+          "home": "网站名2的主页地址"
+        }
       }
-    }]
+    ]
   }
-}]
+]
 ```
 
 ### 3. **部署访问**
 
-**方式一、自行部署**
+**方式一、部署在服务器上**
 
 将你的 `<dir>` 目录部署至自己的Web静态服务器，即可直接访问。
 
@@ -162,8 +176,8 @@ GitHub Pages 支持从以下代码源读取html文件
 
 ### 联系作者
 
-[@ Cong Min](https://congm.in) & [@ whelmin](https://whelm.in)
+[@ whelmin](https://whelm.in) & [@ Cong Min](https://congm.in)
 
-### 许可证
+### 开源许可证
 
 [MIT License](https://github.com/whelmin/navify/blob/master/LICENSE)
