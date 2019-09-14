@@ -1,6 +1,6 @@
 {
   "name": "navify",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "dist/navify.min.js",
   "bin": {
     "navify": "./cli/bin/navify.js"
